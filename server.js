@@ -43,15 +43,21 @@ app.use(express.urlencoded({ limit: '50mb', extended: true}));
 
 app.use(cookieParser())
 
-app.use(express.static(path.join(__dirname, "./client/build")));
-app.get("*", function (_, res) {
-  res.sendFile(
-    path.join(__dirname, "./client/build/index.html"),
-    function (err) {
-      res.status(500).send(err);
-    }
-  );
+
+app.use(express.static(path.join(__dirname, './client/build'))); 
+ app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
 });
+
+// app.use(express.static(path.join(__dirname, "./client/build")));
+// app.get("*", function (_, res) {
+//   res.sendFile(
+//     path.join(__dirname, "./client/build/index.html"),
+//     function (err) {
+//       res.status(500).send(err);
+//     }
+//   );
+// });
 
 //Create a GET route, for getting all the product
 app.get("/prod", async(req, res) => {
