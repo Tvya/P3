@@ -9,7 +9,7 @@ Quiz for user to take <br>
 Products recommended <br>
 
 Technologies used:
-MongoDB
-Express
-React
-Node
+MongoDB <br>
+Express <br>
+React <br>
+Node <br>
